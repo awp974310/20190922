@@ -45,6 +45,19 @@ module.exports = {
                         }
                     }
                 ],
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {limit:1000 }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: { byPassOnDebug: true }
+                    }
+                ]
             }
         ]   //rules end
     },
